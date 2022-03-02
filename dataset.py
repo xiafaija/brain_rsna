@@ -11,8 +11,8 @@ import pandas as pd
 from sklearn import model_selection as sk_model_selection
 import matplotlib.pyplot as plt
 
-train_df = pd.read_csv("F:/rsna_data/train_labels.csv")
-df = pd.read_csv("F:/rsna_data/train_labels.csv")
+train_df = pd.read_csv("../input/rsna-miccai-brain-tumor-radiogenomic-classification/train_labels.csv")
+df = pd.read_csv("../input/rsna-miccai-brain-tumor-radiogenomic-classification/train_labels.csv")
 
 def load_dicom(path):
     dicom = pydicom.read_file(path)
