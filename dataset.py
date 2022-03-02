@@ -41,9 +41,9 @@ class DataRetriever(torch_data.Dataset):
 
     def __getitem__(self, index):
         _id = self.paths[index]
-        patient_path = f"F:/rsna_data/train/{str(_id).zfill(5)}/"
+        patient_path = f"../input/rsna-miccai-brain-tumor-radiogenomic-classification/train/{str(_id).zfill(5)}/"
         channels = []
-        for t in ("FLAIR", "T1w", "T1wCE"):  # "T2w"
+        for t in ("FLAIR", "T1w", "T1wCE","T2w"):  # "T2w"
             t_paths = sorted(
                 glob.glob(os.path.join(patient_path, t, "*")),
                 key=lambda x: int(x[:-4].split("-")[-1]),
