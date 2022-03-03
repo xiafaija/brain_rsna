@@ -14,6 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 train_loader = train_loader()
 valid_loader = valid_loader()
 model = Model()
+model = model.cuda()
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 criterion = torch_functional.binary_cross_entropy_with_logits
